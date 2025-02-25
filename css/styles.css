@@ -1,0 +1,552 @@
+/* Reset und Basis-Stile */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Baloo 2", cursive;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Farbvariablen */
+:root {
+    /* Tag-Farben */
+    --day-sky-gradient: linear-gradient(
+            to bottom,
+            #a2ebff 0%,
+            #ffffff 50%,
+            #00dffc 100%
+    );
+    --day-text: #333333; /* Dunkleres Grau für bessere Lesbarkeit */
+    --day-header-bg: #87ceeb;
+    --day-ground: #96e3ff;
+
+    /* Nacht-Farben */
+    --night-sky-gradient: linear-gradient(
+            to bottom,
+            #1e2a38 0%,
+            #1d2733 50%,
+            #2c3e50 100%
+    );
+    --night-text: #ffffff;
+    --night-header-bg: #2c3e50;
+    --night-ground: #34495e;
+
+    /* Allgemeine Farben */
+    --color-accent: #7f92ff; /* Angepasste Akzentfarbe */
+    --color-pastell-gelb: #ffe2c6;
+    --color-pastell-rosa: #ffd3dc;
+    --color-pastell-blau: #a2ebff;
+    --color-pastell-gruen: #d2f5d0;
+
+    /* Schatten & Umrandungen */
+    --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --border-radius: 15px;
+
+    /* Transition-Grundlagen */
+    --transition-fast: 0.3s;
+}
+
+/* Tag/Nacht Hintergrund */
+body.day-mode {
+    background: var(--day-sky-gradient);
+    color: var(--day-text);
+}
+
+body.night-mode {
+    background: var(--night-sky-gradient);
+    color: var(--night-text);
+}
+
+/* Header und Footer */
+header,
+footer {
+    background-color: var(--day-header-bg);
+    color: var(--day-text);
+    text-align: center;
+    padding: 20px;
+    transition: background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+body.night-mode header,
+body.night-mode footer {
+    background-color: var(--night-header-bg);
+    color: var(--night-text);
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    z-index: 1001;
+}
+
+header h1 {
+    margin: 0 auto;
+    font-size: 2rem;
+    z-index: 1;
+}
+@media (max-width: 768px) {
+.menu-container {
+    flex-direction: column;
+    align-items: center;
+}
+.menu-item {
+    margin: 10px 0;
+}
+}
+.menu-container {
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px 20px;
+}
+.menu-container.visible {
+    display: flex;
+}
+
+.menu-container:not(.visible) {
+    display: none;
+}
+.menu-item {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    transition: background-color 0.02s ease-in-out;
+    margin: 0 10px;
+}
+.menu-item:hover {
+    background-color: #444;
+}
+.menu-item.active {
+    color: #333;
+    background-color: #f7f7f7;
+}
+.menu-link {
+    color: #6f5ac5;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu-link:hover {
+    color: #c35555;
+}
+
+/* Use a more modern animation library */
+.menu-toggle {
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Add some micro-interactions */
+.menu-item:active {
+    transform: scale(0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+/* Hamburger Menü-Button */
+.menu-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    padding: 0;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1002;
+}
+
+.menu-toggle .hamburger {
+    width: 100%;
+    height: 3px;
+    background-color: var(--day-text);
+    border-radius: 2px;
+    transition: background-color var(--transition-fast);
+}
+
+body.night-mode .menu-toggle .hamburger {
+    background-color: var(--night-text);
+}
+
+.menu-toggle:hover .hamburger {
+    background-color: var(--color-accent);
+}
+
+/* Sidebar */
+.sidebar {
+    position: absolute;
+    top: 80px; /* Direkt unter dem Header */
+    left: -250px; /* Standardmäßig verborgen */
+    width: 250px;
+    height: calc(100vh - 80px);
+    background: #c6e2ff;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar.open {
+    transform: translateX(250px); /* Einblenden */
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Logo in der Sidebar */
+.sidebar .logo {
+    font-size: 1.8em;
+    color: #333;
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--color-accent);
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+}
+
+/* Schließen-Button */
+.close-sidebar {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    transition: color var(--transition-fast);
+}
+
+.close-sidebar:hover {
+    color: var(--color-accent);
+}
+
+.sidebar nav ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar nav ul li {
+    margin: 10px 0;
+}
+
+.sidebar nav ul li a {
+    display: block;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #333;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    border: 2px solid transparent;
+    transition: background var(--transition-fast),
+    border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+    background: #fff;
+    border-color: var(--color-accent);
+}
+
+
+.menu-toggle {
+    display: flex; /* Menü-Button auf Mobile anzeigen */
+}
+
+/* Verhindern, dass der Header von der Sidebar überlappt wird */
+header h1 {
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+@media (max-width: 600px) {
+    nav a {
+        font-size: 0.9rem;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .content-section {
+        padding: 10px;
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--day-header-bg);
+    color: var(--day-text);
+    text-align: center;
+    padding: 20px;
+    transition: background-color var(--transition-fast),
+    color var(--transition-fast);
+    position: relative;
+}
+
+body.night-mode footer {
+    background-color: var(--night-header-bg);
+    color: var(--night-text);
+}
+
+footer nav a {
+    color: inherit;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
+}
+
+.footer-image {
+    width: 100px; /* Größe nach Bedarf anpassen */
+    margin-top: 10px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Hauptinhalt */
+main {
+    padding: 100px 20px 20px 20px; /* Platz für den Header */
+}
+
+/* Wiese-Container */
+.wiese-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: background-color 0.5s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-size: cover;
+}
+
+body.day-mode .wiese-container {
+    background: var(--day-ground) url("../images/grass.png") bottom center
+    no-repeat;
+}
+
+body.night-mode .wiese-container {
+    background: var(--night-ground) url("../images/night_grass.png") bottom center
+    no-repeat;
+}
+
+/* Wolken */
+.clouds {
+    position: absolute;
+    top: 50px;
+    width: 200px;
+    height: 100px;
+    background: url("../images/clouds.png") no-repeat center center;
+    background-size: contain;
+    animation: move-clouds 60s linear infinite;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+@keyframes move-clouds {
+    0% {
+        transform: translateX(-200px);
+    }
+    100% {
+        transform: translateX(150vw);
+    }
+}
+
+/* Sterne, nur bei Nacht sichtbar */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background: url("../images/stars.gif") repeat;
+    background-size: contain;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+body.day-mode .stars {
+    display: none;
+}
+
+/* Grashalme */
+.grashalm {
+    position: absolute;
+    bottom: 0;
+    width: 50px;
+    height: 100px;
+    background: url("../images/moving_grass.gif") no-repeat bottom center;
+    background-size: cover;
+    animation: sway 3s infinite ease-in-out;
+    transform-origin: bottom center;
+}
+
+@keyframes sway {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Vögel */
+.birds {
+    position: absolute;
+    top: 100px;
+    left: -100px;
+    width: 150px;
+    height: 50px;
+    background: url("../images/birds.gif") no-repeat center center;
+    background-size: contain;
+    animation: fly-birds 20s linear infinite;
+    z-index: 2;
+}
+
+@keyframes fly-birds {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(200vw);
+    }
+}
+
+/* Content-Bereiche */
+.content-section {
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    transition: background 0.5s ease;
+    font-size: 20px;
+}
+
+body.night-mode .content-section {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Buttons */
+.button {
+    background: var(--color-accent);
+    color: #67f8ff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background var(--transition-fast);
+}
+
+.button:hover {
+    background: #00014e;
+}
+
+.sun-moon {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.schuldi-masko {
+    position: absolute;
+    width: 160px;
+    height: auto;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#sun {
+    top: 10px;
+    left: 10px;
+}
+
+#moon {
+    top: 10px;
+    right: 10px;
+}
+
+#dropdownNav {
+    display: flex;
+}
+
+/* Sichtbarkeit basierend auf Modus */
+.day-mode #sun {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.day-mode #moon {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.night-mode #sun {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.night-mode #moon {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Übergänge für sanftes Ein- und Ausblenden */
+.sun-moon {
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+iframe {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+    width: 100%;
+    height: 500px;
+    background-color: #fff;
+    padding: 10px;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="day-mode">
+<header>
+    <h1><a class="menu-link" href="index.html">Zurück zur Homepage</a></h1>
+    <button class="menu-toggle" aria-label="Menü öffnen">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+    </button>
+</header>
+
+<nav class="dropdown-nav" id="dropdownNav">
+    <div class="menu-container">
+        <div class="menu-item">
+            <a href="index.html" class="menu-link">Startseite</a>
+        </div>
+        <div class="menu-item">
+            <a href="die_staatsschulden.html" class="menu-link">Was sind Staatsschulden?</a>
+        </div>
+        <div class="menu-item">
+            <a href="die_schuldenbremse.html" class="menu-link">Die Schuldenbremse</a>
+        </div>
+        <div class="menu-item">
+            <a href="ausgabenposten.html" class="menu-link">Ausgabensposten</a>
+        </div>
+    </div>
+</nav>
+
+
+<main>
+    <div class="wiese-container">
+        <img
+                src="images/sun.png"
+                alt="Sonne"
+                id="sun"
+                class="sun-moon"
+                onclick="toggleDayNight()"
+        />
+        <img
+                src="images/moon.png"
+                alt="Mond"
+                id="moon"
+                class="sun-moon"
+                onclick="toggleDayNight()"
+        />
+        <img
+                src="images/schuldi.gif"
+                alt="-10 Euro Geldschein"
+                id="schuldi"
+                class="schuldi-masko"
+        />
+        <div class="clouds" style="top: 30px; animation-duration: 70s"></div>
+        <div class="clouds" style="top: 80px; animation-duration: 60s"></div>
+        <div class="clouds" style="top: 120px; animation-duration: 90s"></div>
+
+        <div class="birds"></div>
+
+        <div class="grashalm" style="left: 10%; animation-delay: 0.5s"></div>
+        <div class="grashalm" style="left: 20%"></div>
+        <div class="grashalm" style="left: 30%; animation-delay: 1s"></div>
+        <div class="grashalm" style="left: 40%; animation-delay: 2s"></div>
+        <div class="grashalm" style="left: 50%"></div>
+        <div class="grashalm" style="left: 60%; animation-delay: 2s"></div>
+        <div class="grashalm" style="left: 70%; animation-delay: 2s"></div>
+        <div class="grashalm" style="left: 80%; animation-delay: 1s"></div>
+        <div class="grashalm" style="left: 90%; animation-delay: 0.5s"></div>
+
+    </div>
+
+    <section id="ausgabenposten" class="content-section">
+        <h2>Was sind Ausgabenposten?</h2>
+        <p>Der deutsche Staat gibt sehr viel Geld für verschiedene Dinge aus. Dieses Geld soll vor allem dazu führen, dass Menschen in Deutschland gut versorgt sind. Deswegen wird im Jahr auch am meisten Geld für Sozialkosten, zur Unterstützung von Leuten ausgegeben. Dabei wird Geld an Menschen, die aus anderen Ländern nach Deutschland kommen oder an Menschen, die keine Arbeit haben, gegeben. Das ist in einem Jahr sehr viel Geld, und zwar ca. 76 Milliarden Euro. In den letzten Jahren ist die Höhe dieses Geldes gestiegen, aufgrund von Krieg und der zunehmenden Anzahl an Rentner. Der Krieg in Ukraine führt dazu, dass viele Menschen nach Deutschland flüchten und dann dort ein Haus suchen. Dabei kann dieses Geld helfen, Flüchtlinge unterzubringen und zu versorgen. Außerdem bekommen Menschen in Deutschland, wenn sie lange genug gearbeitet haben monatlich Geld, die sogenannte Rente. Dieses Geld kommt von alten menschen, die arbeiten und wird in einen großen Topf gelegt, aus dem dann die Rente bezahlt wird. Dieses Geld ist somit auch ein Teil der Sozialkosten, die in Deutschland ausgegeben werden. Außerdem werden Dinge immer teurer zu kaufen und Menschen haben immer weniger Geld, weshalb immer mehr Menschen Hilfe vom Staat brauchen. Sie bekommen dann auch Geld, wie z.B. Geld um zu studieren, das BAföG oder Unterstützung, wenn sie keinen Job haben.</p>
+    </section>
+
+    <section id="Bundestagi" class="content-section">
+        <img alt="Cartoon-Bundestag" src="images/bundestagi.png" style="max-width: 90%;">
+        <p>Ich bin Bndestagi! Ich regel das schon ;)</p>
+    </section>
+
+</main>
+
+<footer>
+    <nav>
+        <a href="impressum.html">Impressum</a>
+    </nav>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

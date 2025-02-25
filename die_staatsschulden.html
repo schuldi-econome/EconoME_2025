@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="day-mode">
+<header>
+    <h1><a class="menu-link" href="index.html">Zurück zur Homepage</a></h1>
+    <button class="menu-toggle" aria-label="Menü öffnen">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+    </button>
+</header>
+
+<nav class="dropdown-nav" id="dropdownNav">
+    <div class="menu-container">
+        <div class="menu-item">
+            <a href="index.html" class="menu-link">Startseite</a>
+        </div>
+        <div class="menu-item">
+            <a href="die_staatsschulden.html" class="menu-link">Was sind Staatsschulden?</a>
+        </div>
+        <div class="menu-item">
+            <a href="die_schuldenbremse.html" class="menu-link">Die Schuldenbremse</a>
+        </div>
+        <div class="menu-item">
+            <a href="ausgabenposten.html" class="menu-link">Ausgabensposten</a>
+        </div>
+    </div>
+</nav>
+
+
+<main>
+    <div class="wiese-container">
+        <img
+                src="images/sun.png"
+                alt="Sonne"
+                id="sun"
+                class="sun-moon"
+                onclick="toggleDayNight()"
+        />
+        <img
+                src="images/moon.png"
+                alt="Mond"
+                id="moon"
+                class="sun-moon"
+                onclick="toggleDayNight()"
+        />
+        <img
+                src="images/schuldi.gif"
+                alt="-10 Euro Geldschein"
+                id="schuldi"
+                class="schuldi-masko"
+        />
+        <div class="clouds" style="top: 30px; animation-duration: 70s"></div>
+        <div class="clouds" style="top: 80px; animation-duration: 60s"></div>
+        <div class="clouds" style="top: 120px; animation-duration: 90s"></div>
+
+        <div class="birds"></div>
+
+        <div class="grashalm" style="left: 10%; animation-delay: 0.5s"></div>
+        <div class="grashalm" style="left: 20%"></div>
+        <div class="grashalm" style="left: 30%; animation-delay: 1s"></div>
+        <div class="grashalm" style="left: 40%; animation-delay: 2s"></div>
+        <div class="grashalm" style="left: 50%"></div>
+        <div class="grashalm" style="left: 60%; animation-delay: 2s"></div>
+        <div class="grashalm" style="left: 70%; animation-delay: 2s"></div>
+        <div class="grashalm" style="left: 80%; animation-delay: 1s"></div>
+        <div class="grashalm" style="left: 90%; animation-delay: 0.5s"></div>
+
+    </div>
+
+    <section id="was-sind-staatsschulden" class="content-section">
+        <h2>Was sind Staatsschulden?</h2>
+        <p>Staatsschulden entstehen dann, wenn der Staat mehr Geld ausgibt, als er verdient. Der Staat besteht aus allen „Haushalten“ von Deutschland. Dabei bedeutet Haushalt aber nicht nur ein Haus, in dem eine Familie wohnt. Das ist ein Privathaushalt. In der Wirtschaft meint ein Haushalt sozusagen einen Zusammenschluss, wie eine Fußballmannschaft, die aber nicht das Ziel eines Hobbys haben, sondern Sachen einkaufen die alle haben möchten.
+        </p>
+    </section>
+
+    <section id="wie-entstehen-staatsschulden" class="content-section">
+        <h2>Wie entstehen Staatsschulden?</h2>
+        <p>Der Staat muss verschiedenen anderen Unternehmen Geld zahlen, das sie sich ausgeliehen haben. Zum Beispiel Banken und Versicherungen, die nicht in Deutschland sind. Außerdem müssen auch noch Gelder an die Menschen in Deutschland verteilt werden. Wenn also mehr ausgegeben wird als durch z.B. Steuern eingenommen wird, dann entstehen Schulden.</p>
+    </section>
+
+</main>
+
+<footer>
+    <nav>
+        <a href="impressum.html">Impressum</a>
+    </nav>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

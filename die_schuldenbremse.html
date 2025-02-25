@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="day-mode">
+<header>
+    <h1><a class="menu-link" href="index.html">Zurück zur Homepage</a></h1>
+    <button class="menu-toggle" aria-label="Menü öffnen">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+    </button>
+</header>
+
+<nav class="dropdown-nav" id="dropdownNav">
+    <div class="menu-container">
+        <div class="menu-item">
+            <a href="index.html" class="menu-link">Startseite</a>
+        </div>
+        <div class="menu-item">
+            <a href="die_staatsschulden.html" class="menu-link">Was sind Staatsschulden?</a>
+        </div>
+        <div class="menu-item">
+            <a href="die_schuldenbremse.html" class="menu-link">Die Schuldenbremse</a>
+        </div>
+        <div class="menu-item">
+            <a href="ausgabenposten.html" class="menu-link">Ausgabensposten</a>
+        </div>
+    </div>
+</nav>
+
+
+<main>
+    <div class="wiese-container">
+        <img
+                src="images/sun.png"
+                alt="Sonne"
+                id="sun"
+                class="sun-moon"
+                onclick="toggleDayNight()"
+        />
+        <img
+                src="images/moon.png"
+                alt="Mond"
+                id="moon"
+                class="sun-moon"
+                onclick="toggleDayNight()"
+        />
+        <img
+                src="images/schuldi.gif"
+                alt="-10 Euro Geldschein"
+                id="schuldi"
+                class="schuldi-masko"
+        />
+        <div class="clouds" style="top: 30px; animation-duration: 70s"></div>
+        <div class="clouds" style="top: 80px; animation-duration: 60s"></div>
+        <div class="clouds" style="top: 120px; animation-duration: 90s"></div>
+
+        <div class="birds"></div>
+
+        <div class="grashalm" style="left: 10%; animation-delay: 0.5s"></div>
+        <div class="grashalm" style="left: 20%"></div>
+        <div class="grashalm" style="left: 30%; animation-delay: 1s"></div>
+        <div class="grashalm" style="left: 40%; animation-delay: 2s"></div>
+        <div class="grashalm" style="left: 50%"></div>
+        <div class="grashalm" style="left: 60%; animation-delay: 2s"></div>
+        <div class="grashalm" style="left: 70%; animation-delay: 2s"></div>
+        <div class="grashalm" style="left: 80%; animation-delay: 1s"></div>
+        <div class="grashalm" style="left: 90%; animation-delay: 0.5s"></div>
+
+    </div>
+
+    <section id="intro" class="content-section">
+        <h2>Stell dir mal vor,</h2>
+        <p>du hast ein Sparschwein. Wenn du Geld ausgibst, das du nicht hast, musst du dir welches leihen. Der Staat funktioniert ähnlich: Er nimmt Geld ein (zum Beispiel durch Steuern) und gibt es für wichtige Dinge aus, wie Schulen, Straßen oder Krankenhäuser. Manchmal gibt er aber mehr Geld aus, als er hat, und muss sich verschulden.</p>
+    </section>
+
+    <section id="die-schuldenbremse" class="content-section">
+        <h2>Die Schuldenbremse</h2>
+        <p>Damit das nicht zu viel wird, gibt es eine Regel: die Schuldenbremse. Sie ist wie ein Stoppschild für den Staat: Er darf nur eine bestimmte Menge an Schulden machen. Das bedeutet, dass der Staat nur 0,35 % von dem Geld, das alle Menschen und Firmen in Deutschland zusammen verdienen, als neue Schulden aufnehmen darf. Wenn es der Wirtschaft schlecht geht, darf er etwas mehr Schulden machen, und wenn es der Wirtschaft gut geht, sollte er weniger ausgeben.</p>
+        <p>Diese Regel ist wichtig, damit der Staat nicht zu viele Schulden macht, denn sonst müssten die Menschen in der Zukunft diese Schulden zurückzahlen, also auch du, wenn du erwachsen bist!</p>
+    </section>
+
+    <section id="aktuelle-probleme" class="content-section">
+        <h2>Aktuelle Probleme</h2>
+        <p>Im Moment gibt es aber große Probleme wie die Corona-Pandemie, den Ukraine-Krieg und die Energiekrise. Wegen dieser Krisen braucht der Staat mehr Geld als geplant, und die Schuldenbremse funktioniert nicht richtig. Deshalb werden die Menschen und Firmen durch höhere Preise und Gebühren belastet. Aber einfach die Steuern zu erhöhen, ist auch keine gute Lösung. Stattdessen wird darüber diskutiert, ob der Staat weniger Geld ausgeben soll – und nur für besonders wichtige Dinge wie Bildung, soziale Gerechtigkeit oder Sicherheit.</p>
+    </section>
+
+    <section id="pro-und-contra" class="content-section">
+        <h2>Pro und Contra:</h2>
+        <p>Manchmal braucht der Staat mehr Geld, als er gerade hat. Deshalb überlegt man, die Schuldenbremse ein bisschen lockerer zu machen, damit der Staat mehr Geld leihen darf. Das hat sowohl Vorteile als auch Nachteile.</p>
+    </section>
+
+    <section id="vorteile" class="content-section">
+        <h2>Vorteile</h2>
+        <p>Wenn der Staat mehr Schulden machen darf, kann er in Dinge investieren, die für unsere Zukunft wichtig sind. Er könnte zum Beispiel bessere Straßen bauen, Schulen verbessern oder Maßnahmen ergreifen, um unsere Umwelt zu schützen. Auch in schwierigen Zeiten, wie bei einer großen Krankheit wie Corona, bei hohen Energiepreisen oder wenn es der Wirtschaft schlecht geht, kann der Staat mit mehr Schulden helfen. So kann er zum Beispiel Firmen unterstützen und dafür sorgen, dass weniger Menschen ihren Job verlieren. Außerdem könnte der Staat das zusätzliche Geld nutzen, um dafür zu sorgen, dass alle Menschen im Land fair behandelt werden und jeder eine gute Bildung bekommt.</p>
+    </section>
+
+    <section id="nachteile" class="content-section">
+        <h2>Nachteile</h2>
+        <p>Aber es gibt auch Nachteile. Wenn der Staat heute mehr Schulden macht, müssen die Menschen in der Zukunft mit den Kosten dafür leben. Das heißt, wenn du groß bist, könnten deine Steuern höher sein, weil die Schulden von heute noch abbezahlt werden müssen. Außerdem kann es passieren, dass durch zu viel Geld, das der Staat ausgibt, alles teurer wird – man nennt das Inflation. Und schließlich ist die Schuldenbremse im Grundgesetz verankert, dem allerwichtigsten Gesetz in Deutschland. Wenn man diese Regel ändert, muss man das Gesetz anpassen, und das ist sehr schwierig.</p>
+    </section>
+
+    <section id="fazit" class="content-section">
+        <h2>Fazit</h2>
+        <p>Die Politiker überlegen also, ob es besser ist, jetzt mehr Geld auszugeben, um wichtige Projekte zu bezahlen und in schwierigen Zeiten zu helfen, oder ob man lieber daran festhalten sollte, dass zukünftige Generationen nicht mit all diesen Schulden belastet werden. So wird abgewogen, wie man heute helfen kann, ohne morgen Probleme zu machen.</p>
+    </section>
+
+</main>
+
+<footer>
+    <nav>
+        <a href="impressum.html">Impressum</a>
+    </nav>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
